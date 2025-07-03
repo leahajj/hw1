@@ -10,6 +10,7 @@
 
 #define PI 3.14159265359
 
+
 // Function: Ask the user how many segments they want and check if it's valid
 int getNumberOfSegments() {
     int n;
@@ -21,22 +22,22 @@ int getNumberOfSegments() {
 }
 
 // Function: Ask the user for data about one segment and check if it’s valid
-void getSegmentData(int index, float *R, float *ha, float *hb) {
+void getSegmentData(int index, float * R_ptr, float *ha_ptr, float *hb_ptr) {
     while (1) {
         printf("Obtaining data for spherical segment number %d\n", index);
 
         printf("What is the radius of the sphere (R)?\n");
-        scanf("%f", R);
+        scanf("%f", R_ptr);
 
         printf("What is the height of the top area of the spherical segment (ha)?\n");
-        scanf("%f", ha);
+        scanf("%f", ha_ptr);
 
         printf("What is the height of the bottom area of the spherical segment (hb)?\n");
-        scanf("%f", hb);
+        scanf("%f", hb_ptr);
 
-        printf("Entered data: R = %.2f ha = %.2f hb = %.2f.\n", *R, *ha, *hb);
+        printf("Entered data: R = %.2f ha = %.2f hb = %.2f.\n", *R_ptr, *ha_ptr, *hb_ptr);
 
-        if (*R > 0 && *ha > 0 && *hb > 0 && *ha <= *R && *hb <= *R && *ha >= *hb) {
+        if (*R_ptr > 0 && *ha_ptr > 0 && *hb_ptr > 0 && *ha_ptr <= *R_ptr && *hb_ptr <= *R_ptr && *ha_ptr >= *hb_ptr) {
             break; // Valid input
         } else {
             printf("Invalid Input.\n");
